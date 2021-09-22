@@ -25,7 +25,7 @@ const createTask = ({id, description, completed}) => {
     else
         taskDescription.className = "description"
     
-    taskDescription.name = `${id-1}`;
+    taskDescription.name = `${id}`;
     taskDescription.innerText = description
     
     taskDescription.addEventListener("change", (e) => {
@@ -35,7 +35,7 @@ const createTask = ({id, description, completed}) => {
 
     let completeButton = document.createElement("button");
     completeButton.className = "complete-task";
-    completeButton.value = `${id-1}`;
+    completeButton.value = `${id}`;
     completeButton.id = "complete-task";
     
         ////// EVENTO ////// EVENTO 
@@ -53,7 +53,7 @@ const createTask = ({id, description, completed}) => {
 
     let deleteButton = document.createElement("button");
     deleteButton.className = "delete-task";
-    deleteButton.value = `${id-1}`;
+    deleteButton.value = `${id}`;
     deleteButton.id = "delete-task";    
 
         ////// EVENTO ////// EVENTO 

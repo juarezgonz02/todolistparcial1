@@ -10,7 +10,8 @@ else
 
 
 taskDescriptionInput.addEventListener("input", (e)=>{
-    if(e.target.value.length > 0){
+
+     if(e.target.value.length > 0){
         addTaskButton.disabled = false;
     }
     else{
@@ -18,10 +19,20 @@ taskDescriptionInput.addEventListener("input", (e)=>{
     }
 })
 
+taskDescriptionInput.addEventListener("keypress", (e)=>{
+
+     if(e.target.value.length > 0 && e.key == "Enter")
+        addTask();
+})
+
 const showTasks = () => {
     tasksContainer.innerHTML = "";
-    taskList.forEach( task => {
+    
+    let i = 0;
+    taskList.forEach(task => {
+        task.id = i
         tasksContainer.appendChild(createTask(task))
+        i+=1
     })
     
     localStorage.setItem("tasks", JSON.stringify(taskList))
