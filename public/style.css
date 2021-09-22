@@ -1,69 +1,151 @@
-body{
-    display: flex;
-    justify-content: center;
-    font-family: 'Raleway', sans-serif;
-}
-.main{
-    display: grid;
-    grid-template-columns: 85vw;
-    grid-template-rows: 5vh 20px auto;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+@media only screen and (min-width: 1200px) {
+    body{
+        display: flex;
+        justify-content: center;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    #root{
+        width: 60vw;
+        margin-top: 3em;
+    }
+    
+    .head-Container{    
+        text-align: center;
+        font-weight: 600;
+        font-size: 2.4em;
+        margin-bottom: 1em;
+    }
 
+    .main{
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto 20px auto;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    
+    }
+    
+    .new-task-bar{
+        grid-area: 1 / 1 / 2 / 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 3em;
+        justify-content: center;
+    }
+    
+    #task-description {
+        width: 70%;
+        font-size: 1.5em;
+        height: 80%;
+    }
+
+    .tasks-container{
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    
+    .task{
+        display: flex;
+        align-items: center;
+        height: 4em;
+    }
+    
+    #add-task{
+        width: 3em;
+        height: 3em;
+        margin-left: 12px;
+        border: none;   
+        background-color: rgb(0, 89, 255);
+        color: white;
+        border-radius: 50px;
+    }
+    
+    #add-task:hover{
+        cursor: pointer;
+    }
+
+    #add-task:disabled{
+        background-color: gray;
+        color: white;
+    }
+
+
+    
+    .complete-task{
+        color: rgb(88, 221, 88);
+        font-size: 2em;
+        background-color: white;
+        width: 2em;
+        height: 2em;
+    }
+
+    .complete-task:hover{
+        color: white;
+        font-size: 2em;
+        background-color: rgb(88, 221, 88);
+        width: 2em;
+        height: 2em;
+    }
+    
+    .delete-task{
+        background-color: white;
+        color: red;
+        width: 2em;
+        font-size: 2em;
+        height: 2em;
+    }
+
+    .delete-task:hover{
+        background-color: red;
+        color: white;
+        font-size: 2em;
+        width: 2em;
+        height: 2em;
+        border-radius: 50px;
+    }
+    
+    .completed {
+        text-decoration-line: line-through;
+    }
+    
+    .description-container{
+        width: 75%;
+        height: 100%;
+    }
+
+    .buttons-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 15%;
+        height: 100%;
+    }
+    
+    .buttons-container > button {
+        height: 50px;
+        width: 50px;
+        flex-grow: 0;
+        border: none;
+    }
+    .complete-task{
+        
+    }
+
+    .buttons-container > button:hover{
+        cursor: pointer;
+    }
+
+    .description {
+        width: 100%;
+        font-family: 'Raleway', sans-serif;;
+        height: 100%;
+        scroll-behavior: smooth;
+        text-align: center;        
+        font-size: 2em;
+        border: none;
+        resize: none;
+    }
 }
 
-.new-task-bar{
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.new-task-bar > #task-description {
-    width: 70%;
-    height: 80%;
-}
-
-.tasks-container{
-    grid-area: 3 / 1 / 4 / 2;
-}
-
-.task{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-.task > p{
-    height: 2.5em;
-    width: 15em;
-    overflow: auto;
-}
-
-.task > button {
-    flex-grow: 0;
-    border: none;
-}
-
-.task > button:hover{
-    background-color: gainsboro;
-}
-
-.complete-task{
-    background-color: green;
-    width: 2em;
-    height: 2em;
-}
-
-.delete-task{
-    background-color: red;
-    width: 2em;
-    height: 2em;
-}
-
-.completed {
-    text-decoration-line: line-through;
-}
-
-.description {
-    border: none;
-    resize: none;
-}

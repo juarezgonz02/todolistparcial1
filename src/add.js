@@ -14,12 +14,27 @@ const addTask = () => {
     showTasks();
 }
 
-const createTask = ({id, description, completed}) => {
-    let newTaskContainer = document.createElement("div")
-    let taskDescription = document.createElement("textarea")
-    
-    newTaskContainer.className = "task"
+const iconCompleteClass = "fas fa-check";
+const iconDeleteClass = "fas fa-trash";
 
+const createTask = ({id, description, completed}) => {
+
+    ///////////////////////////////
+    //// HTML ELEMENTS CREATE ////
+    let newTaskContainer = document.createElement("div")
+    let descriptionContainer = document.createElement("div") 
+    let buttonsContainer = document.createElement("div")
+    let iconComplete = document.createElement("i")
+    let iconDelete =  document.createElement("i")
+    let taskDescription = document.createElement("textarea")
+    ////////////////////////////////
+    newTaskContainer.className = "task"
+    descriptionContainer.className = "description-container"
+    buttonsContainer.className = "buttons-container"
+    iconComplete.className = iconCompleteClass
+    iconDelete.className = iconDeleteClass;
+    
+    
     if(completed)
         taskDescription.className = "description completed"
     else
@@ -33,12 +48,14 @@ const createTask = ({id, description, completed}) => {
         showTasks();
     })
 
+    descriptionContainer.appendChild(taskDescription)
+
+    /*  COMPLETION AND DELETION BUTTONS AND ITS EVENTS */ 
     let completeButton = document.createElement("button");
     completeButton.className = "complete-task";
     completeButton.value = `${id}`;
     completeButton.id = "complete-task";
-    
-        ////// EVENTO ////// EVENTO 
+    iconComplete.value = `${id}`
     completeButton.addEventListener("click", (e) => {
         
         
@@ -50,21 +67,27 @@ const createTask = ({id, description, completed}) => {
         showTasks();
         
     })
-
+    completeButton.appendChild(iconComplete);
+    //------------
     let deleteButton = document.createElement("button");
     deleteButton.className = "delete-task";
     deleteButton.value = `${id}`;
     deleteButton.id = "delete-task";    
 
-        ////// EVENTO ////// EVENTO 
     deleteButton.addEventListener("click", (e) => {
         taskList.splice(parseInt(e.target.value), 1) 
         showTasks();
     })
-    
-    newTaskContainer.appendChild(taskDescription)
-    newTaskContainer.appendChild(completeButton)
-    newTaskContainer.appendChild(deleteButton)
+
+    deleteButton.appendChild(iconDelete)
+
+    buttonsContainer.appendChild(completeButton)
+    buttonsContainer.appendChild(deleteButton)
+    //////////////
+    //FINALLY
+    newTaskContainer.appendChild(descriptionContainer)
+    newTaskContainer.appendChild(buttonsContainer)
+
 
     return newTaskContainer;
 } 
