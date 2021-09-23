@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/public/style-mobile.css">
     <link rel="stylesheet" href="/public/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/b111eba4a9.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY TO DO LIST</title>
+    <title>MY TODO LIST</title>
 </head>
 <body>
     <div id="root">
 
         <header class="head-Container">
-            TODO LIST
-            <br>
-            Anota, marca, edita tus  quehaceres   
+            <span>
+                TODO LIST <br>
+                Anota, marca, edita tus quehaceres   
+            </span>
         </header>
         
         <div class="main">
-            <div class="new-task-bar">
+            <div class="new-task-bar">  
                 <input type="text" name="task-description" id="task-description">
                 <button type="submit" id="add-task" disabled value="Agregar">
                     <i class="fas fa-plus"></i>
@@ -33,7 +35,7 @@
                 <!----  EJEMPLO, SOLO DEBE APARECER SI HAY PROBLEMAS-->
                 <div class="task">
                     <div class="description-container">
-                        <textarea class="description">Lorem ipsum dolor sit</textarea>
+                        <textarea class="description">ALGO ESTA MAL :(</textarea>
 
                     </div>
                     
@@ -41,15 +43,16 @@
                         <button class="complete-task"> <i class="fas fa-check"></i> </button>
                         <button class="delete-task" value="1"> <i class="fas fa-trash"></i></button>
                     </div>
-
+                <!---->
                 
                 </div>
             </div>
         </div>
 
     </div>
-        <script src="./src/index.js"></script>
-        <script src="./src/add.js"></script>
+        
+    <script src="./src/index.js"></script>
+    <script src="./src/add.js"></script>
     
 
 </body>
