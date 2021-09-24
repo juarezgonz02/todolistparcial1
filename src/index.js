@@ -29,6 +29,24 @@ const showTasks = () => {
     tasksContainer.innerHTML = "";
     
     let i = 0;
+    
+    taskList = taskList.sort((a,b)=>{
+        if (a.completed){
+            return 1
+        }
+        else if(b.completed){
+            return -1
+        }
+        else if(!b.completed && !a.completed){
+            return 0;
+        }
+        else 
+        {
+            return 1;
+        }
+    })
+
+
     taskList.forEach(task => {
         task.id = i
         tasksContainer.appendChild(createTask(task))
