@@ -126,6 +126,18 @@ body{
     text-decoration-line: line-through;
     color: gray;
 }
+
+.completed > .description-container > textarea{
+    text-decoration-line: line-through;
+}
+.completed > .buttons-container > .complete-task{
+    color: gray;
+}
+
+.completed > .buttons-container > .complete-task:hover{
+    background: gray;
+    color: white;
+}
 .description-container{
     width: 65%;
     font-family: 'Raleway', sans-serif;
